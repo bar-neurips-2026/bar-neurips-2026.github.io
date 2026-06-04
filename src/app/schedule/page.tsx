@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PageFrame, SiteShell } from "@/components/learning-agents-shell";
 import { siteContent } from "@/data/siteContent";
 
@@ -34,7 +35,30 @@ export default function SchedulePage() {
 
         <section className="subpage-section">
           <h2>{siteContent.speakers.heading}</h2>
-          <p className="placeholder">{siteContent.speakers.text}</p>
+          <div className="speakers-grid">
+            {siteContent.speakers.people.map((speaker) => (
+              <a
+                className="organizer-link"
+                href={speaker.website}
+                key={speaker.name}
+                target="_blank"
+                rel="external nofollow noopener"
+              >
+                <div className="speaker">
+                  <div className="speaker-avatar">
+                    <Image
+                      src={speaker.image.src}
+                      alt={speaker.image.alt}
+                      width={72}
+                      height={72}
+                    />
+                  </div>
+                  <div className="speaker-name">{speaker.name}</div>
+                  <div className="speaker-affiliation">{speaker.shortTitle}</div>
+                </div>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section className="subpage-section">

@@ -13,6 +13,8 @@ export type Organizer = {
   };
 };
 
+export type Speaker = Organizer;
+
 export type TopicArea = {
   title: string;
   question: string;
@@ -173,7 +175,7 @@ export const siteContent = {
   ],
   organizers: [
     {
-      name: "Dr. Xinshu Li",
+      name: "Xinshu Li",
       title: "Lecturer, School of Computing Technologies, RMIT University",
       shortTitle: "RMIT University",
       website: "https://xinshu-li.github.io/",
@@ -181,13 +183,13 @@ export const siteContent = {
       email: "To be added",
       image: {
         src: "/images/organizers/xinshu-li.jpg",
-        alt: "Dr. Xinshu Li",
+        alt: "Xinshu Li",
         status: "downloaded",
         source: "Personal website profile photo",
       },
     },
     {
-      name: "Dr. Feng Xia",
+      name: "Feng Xia",
       title: "IEEE Fellow and Professor, School of Computing Technologies, RMIT University",
       shortTitle: "RMIT University",
       website: "https://www.xia.ai/",
@@ -195,13 +197,13 @@ export const siteContent = {
       email: "To be added",
       image: {
         src: "/images/organizers/feng-xia.webp",
-        alt: "Dr. Feng Xia",
+        alt: "Feng Xia",
         status: "downloaded",
         source: "RMIT public profile photo",
       },
     },
     {
-      name: "Dr. Minhae Kwon",
+      name: "Minhae Kwon",
       title:
         "Associate Professor, Department of Electrical and Computer Engineering, Sungkyunkwan University",
       shortTitle: "Sungkyunkwan University",
@@ -210,13 +212,13 @@ export const siteContent = {
       email: "To be added",
       image: {
         src: "/images/organizers/minhae-kwon.png",
-        alt: "Dr. Minhae Kwon",
+        alt: "Minhae Kwon",
         status: "downloaded",
         source: "BMIL profile photo",
       },
     },
     {
-      name: "Dr. Feras Dayoub",
+      name: "Feras Dayoub",
       title: "Associate Professor, Australian Institute for Machine Learning, University of Adelaide",
       shortTitle: "University of Adelaide",
       website: "https://ferasdayoub.com/",
@@ -224,13 +226,13 @@ export const siteContent = {
       email: "To be added",
       image: {
         src: "/images/organizers/feras-dayoub.png",
-        alt: "Dr. Feras Dayoub",
+        alt: "Feras Dayoub",
         status: "downloaded",
         source: "Personal website profile photo",
       },
     },
     {
-      name: "Dr. David Lo",
+      name: "David Lo",
       title:
         "OUB Chair Professor of Computer Science and Director of the Information and Systems Cluster, Singapore Management University",
       shortTitle: "Singapore Management University",
@@ -239,7 +241,7 @@ export const siteContent = {
       email: "To be added",
       image: {
         src: "/images/organizers/david-lo.jpg",
-        alt: "Dr. David Lo",
+        alt: "David Lo",
         status: "downloaded",
         source: "SMU personal faculty page photo",
       },
@@ -247,7 +249,81 @@ export const siteContent = {
   ] satisfies Organizer[],
   speakers: {
     heading: "Speakers",
-    text: "Speakers to be announced.",
+    people: [
+      {
+        name: "Hussein Abbass",
+        title: "Professor, UNSW Canberra, School of Systems & Computing",
+        shortTitle: "UNSW Canberra",
+        website: "https://www.husseinabbass.net/",
+        bio: "Prof. Hussein Abbass is a Professor at UNSW Canberra and Founding Editor-in-Chief of IEEE Transactions on Artificial Intelligence. His work spans AI-enabled swarm systems, human-machine teaming, distributed machine learning, machine education, AI assurance, shepherding, and trusted autonomy.",
+        email: "h.abbass@adfa.edu.au",
+        image: {
+          src: "/images/speakers/hussein-abbass.jpg",
+          alt: "Hussein Abbass",
+          status: "downloaded",
+          source: "UNSW public staff profile photo",
+        },
+      },
+      {
+        name: "Bo An",
+        title:
+          "President's Chair Professor, College of Computing and Data Science, Nanyang Technological University",
+        shortTitle: "Nanyang Technological University",
+        website: "https://personal.ntu.edu.sg/boan/",
+        bio: "Prof. Bo An is a President's Chair Professor and Head of Division of Artificial Intelligence at the College of Computing and Data Science, Nanyang Technological University. His research interests include artificial intelligence, multi-agent systems, computational game theory, reinforcement learning, automated negotiation, and optimization.",
+        email: "boan@ntu.edu.sg",
+        image: {
+          src: "/images/speakers/bo-an.jpg",
+          alt: "Bo An",
+          status: "downloaded",
+          source: "Personal website profile photo",
+        },
+      },
+      {
+        name: "Michael Milford",
+        title:
+          "Centre Director, QUT Centre for Robotics; Professor and ARC Laureate Fellow",
+        shortTitle: "QUT Centre for Robotics",
+        website: "https://www.qut.edu.au/about/our-people/academic-profiles/michael.milford",
+        bio: "Prof. Michael Milford conducts interdisciplinary research at the boundary between robotics, neuroscience, and computer vision. He is Centre Director of the QUT Centre for Robotics, Professor, ARC Laureate Fellow, and a Fellow of the Australian Academy of Technology and Engineering.",
+        email: "michael.milford@qut.edu.au",
+        image: {
+          src: "/images/speakers/michael-milford.jpg",
+          alt: "Michael Milford",
+          status: "downloaded",
+          source: "QUT Centre for Robotics public profile photo",
+        },
+      },
+      {
+        name: "Taro Toyoizumi",
+        title: "Team Director, Neural Computation and Adaptation, RIKEN Center for Brain Science",
+        shortTitle: "RIKEN Center for Brain Science",
+        website: "https://toyoizumilab.riken.jp/taro/index.html",
+        bio: "Taro Toyoizumi is Team Director of Neural Computation and Adaptation at the RIKEN Center for Brain Science. His research investigates computational neuroscience, information statistical dynamics, and neural learning theory.",
+        email: "taro.toyoizumi@riken.jp",
+        image: {
+          src: "/images/speakers/taro-toyoizumi.jpg",
+          alt: "Taro Toyoizumi",
+          status: "downloaded",
+          source: "Personal website profile photo",
+        },
+      },
+      {
+        name: "Shuo Yu",
+        title:
+          "Associate Professor, School of Computer Science and Technology, Dalian University of Technology",
+        shortTitle: "Dalian University of Technology",
+        website: "https://www.shuo-yu.com/",
+        bio: "Dr. Shuo Yu is an Associate Professor in the School of Computer Science and Technology at Dalian University of Technology. Her research interests include brain science, data science, and graph learning.",
+        email: "To be added",
+        image: {
+          src: "/images/speakers/shuo-yu.png",
+          alt: "Shuo Yu",
+          status: "downloaded",
+          source: "Personal website profile photo",
+        },
+      },
+    ] satisfies Speaker[],
   },
   footer: "BAR: Brain, Agents, and Robots\nNeurIPS 2026 Workshop · Sydney · Fri Dec 11, 2026",
 } as const;

@@ -45,7 +45,11 @@ export default function Home() {
 
         <section className="section">
           <h2>{siteContent.speakers.heading}</h2>
-          <p className="section-note">{siteContent.speakers.text}</p>
+          <div className="people">
+            {siteContent.speakers.people.map((speaker) => (
+              <OrganizerCard key={speaker.name} organizer={speaker} />
+            ))}
+          </div>
         </section>
 
         <section className="section">

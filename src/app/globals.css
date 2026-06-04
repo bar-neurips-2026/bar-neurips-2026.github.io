@@ -782,8 +782,9 @@ article {
 }
 
 .info-table td:first-child {
-  width: 160px;
+  width: 260px;
   color: #6b7280;
+  white-space: nowrap;
 }
 
 .info-table td:last-child {
@@ -1334,5 +1335,10 @@ html.dark .organizer-bio {
   .time {
     width: 116px;
     padding-right: 12px;
+  }
+
+  .info-table td:first-child {
+    width: 160px;
+    white-space: normal;
   }
 }

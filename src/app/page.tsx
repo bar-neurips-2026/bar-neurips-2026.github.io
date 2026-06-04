@@ -40,12 +40,6 @@ export default function Home() {
               <li className="home-topic" key={area.title}>
                 <h3>{area.title}</h3>
                 <p>{area.question}</p>
-                <p className="home-topic-label">Topics include, e.g.,</p>
-                <ul className="home-topic-items">
-                  {area.topics.map((topic) => (
-                    <li key={topic}>{topic}</li>
-                  ))}
-                </ul>
               </li>
             ))}
           </ol>

@@ -1,7 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
-import { MobileNavToggle, ScrollProgress, ThemeToggle } from "@/components/learning-agents-client";
+import {
+  MobileNavToggle,
+  ScrollProgress,
+  SmoothScrollLink,
+  ThemeToggle,
+} from "@/components/learning-agents-client";
 import { siteContent, type Organizer } from "@/data/siteContent";
 
 type RouteKey = (typeof siteContent.navigation)[number]["key"];
@@ -21,9 +25,9 @@ export function SiteShell({
         <nav id="navbar" className="site-navbar" role="navigation">
           <div className="site-container nav-container">
             {showBrand ? (
-              <Link className="navbar-brand" href="/">
+              <SmoothScrollLink className="navbar-brand" href="/#top">
                 {siteContent.title}
-              </Link>
+              </SmoothScrollLink>
             ) : null}
             <MobileNavToggle />
             <div className="navbar-collapse" id="navbarNav">
@@ -33,10 +37,10 @@ export function SiteShell({
                     key={item.href}
                     className={item.key === active ? "nav-item active" : "nav-item"}
                   >
-                    <Link className="nav-link" href={item.href}>
+                    <SmoothScrollLink className="nav-link" href={item.href}>
                       {item.label}{" "}
                       {item.key === active ? <span className="sr-only">(current)</span> : null}
-                    </Link>
+                    </SmoothScrollLink>
                   </li>
                 ))}
                 <li className="toggle-container">

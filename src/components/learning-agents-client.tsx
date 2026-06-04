@@ -1,8 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type MouseEvent, type ReactNode, useEffect, useState } from "react";
 
 type Theme = "system" | "dark" | "light";
+
+export function SmoothScrollLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  function handleClick(event: MouseEvent<HTMLAnchorElement>) {
+    const hashIndex = href.indexOf("#");
+
+    if (
+      hashIndex === -1 ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    const pathname = window.location.pathname;
+
+    if (pathname !== "/" && pathname !== "/index.html") {
+      return;
+    }
+
+    const targetId = href.slice(hashIndex + 1);
+    event.preventDefault();
+
+    if (!targetId || targetId === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      document.getElementById(targetId)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    window.history.replaceState(null, "", `${pathname}${window.location.search}`);
+  }
+
+  return (
+    <a className={className} href={href} onClick={handleClick}>
+      {children}
+    </a>
+  );
+}
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;

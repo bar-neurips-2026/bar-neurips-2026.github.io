@@ -28,18 +28,21 @@ export const siteContent = {
   date: "Fri Dec 11, 2026",
   heroBadge: "NeurIPS 2026 Workshop",
   navigation: [
-    { key: "home", label: "Home", href: "/" },
-    { key: "call-for-papers", label: "Call for Papers", href: "/call-for-papers/" },
-    { key: "schedule", label: "Schedule", href: "/schedule/" },
-    { key: "organizers", label: "Organizers", href: "/organizers/" },
+    { key: "about", label: "Introduction", href: "/#about" },
+    { key: "topics", label: "Topics", href: "/#topics" },
+    { key: "keynote-speakers", label: "Keynote Speakers", href: "/#keynote-speakers" },
+    { key: "call-for-papers", label: "Call for Papers", href: "/#call-for-papers" },
+    { key: "important-dates", label: "Important Dates", href: "/#important-dates" },
+    { key: "schedule", label: "Schedule", href: "/#schedule" },
+    { key: "organizers", label: "Organizers", href: "/#organizers" },
   ],
   sections: {
-    about: "About",
+    about: "Introduction",
     topics: "Topics of Interest",
     importantDates: "Important Dates",
     schedule: "Schedule",
     organizers: "Organizers",
-    speakers: "Speakers",
+    speakers: "Keynote Speakers",
   },
   scheduleColumns: ["Time", "Session"],
   pages: {
@@ -92,7 +95,7 @@ export const siteContent = {
   about:
     "The next breakthroughs in intelligence may emerge not from a single discipline, but from the intersection of neuroscience, AI, and robotics. This workshop creates a forum for researchers to exchange ideas, challenge assumptions, and uncover the principles that will shape future intelligence.",
   importantDates: [
-    ["Call for Papers Released", "July 13, 2026, AoE"],
+    ["Paper Submission Opens", "July 13, 2026, AoE"],
     ["Paper Submission Deadline", "August 29, 2026, AoE"],
     ["Acceptance Notification", "September 29, 2026, AoE"],
     ["Workshop Date", "Fri Dec 11, 2026, Sydney"],
@@ -203,10 +206,10 @@ export const siteContent = {
     },
     {
       name: "Feras Dayoub",
-      title: "Associate Professor, Australian Institute for Machine Learning, University of Adelaide",
-      shortTitle: "University of Adelaide",
+      title: "Associate Professor, Australian Institute for Machine Learning, Adelaide University",
+      shortTitle: "Adelaide University",
       website: "https://ferasdayoub.com/",
-      bio: "Dr. Feras Dayoub is an Associate Professor at the Australian Institute for Machine Learning (AIML) at the University of Adelaide. His research focuses on autonomous perception, robotic vision, and intelligent robotic systems operating in complex and uncertain environments. He leads the Embodied AI and Robotic Vision Group and serves as Co-Director of the French-Australian CROSSING Lab on Human-Autonomous Agents Teaming. His expertise in trustworthy robot perception and human-robot collaboration will strengthen the embodied intelligence and robotics dimensions of BAR.",
+      bio: "Dr. Feras Dayoub is an Associate Professor at the Australian Institute for Machine Learning (AIML) at Adelaide University. His research focuses on autonomous perception, robotic vision, and intelligent robotic systems operating in complex and uncertain environments. He leads the Embodied AI and Robotic Vision Group and serves as Co-Director of the French-Australian CROSSING Lab on Human-Autonomous Agents Teaming. His expertise in trustworthy robot perception and human-robot collaboration will strengthen the embodied intelligence and robotics dimensions of BAR.",
       email: "To be added",
       image: {
         src: "/images/organizers/feras-dayoub.png",
@@ -246,21 +249,21 @@ export const siteContent = {
     },
   ] satisfies Organizer[],
   speakers: {
-    heading: "Speakers",
-    note: "The speakers are listed in alphabetical order by last name.",
+    heading: "Keynote Speakers",
+    note: "The keynote speakers are listed in alphabetical order by last name.",
     people: [
       {
         name: "Hussein Abbass",
-        title: "Professor, UNSW Canberra, School of Systems & Computing",
-        shortTitle: "UNSW Canberra",
+        title: "Professor, University of New South Wales, School of Systems & Computing",
+        shortTitle: "University of New South Wales",
         website: "https://www.husseinabbass.net/",
-        bio: "Prof. Hussein Abbass is a Professor at UNSW Canberra and Founding Editor-in-Chief of IEEE Transactions on Artificial Intelligence. His work spans AI-enabled swarm systems, human-machine teaming, distributed machine learning, machine education, AI assurance, shepherding, and trusted autonomy.",
+        bio: "Prof. Hussein Abbass is a Professor at the University of New South Wales and Founding Editor-in-Chief of IEEE Transactions on Artificial Intelligence. His work spans AI-enabled swarm systems, human-machine teaming, distributed machine learning, machine education, AI assurance, shepherding, and trusted autonomy.",
         email: "h.abbass@adfa.edu.au",
         image: {
           src: "/images/speakers/hussein-abbass.jpg",
           alt: "Hussein Abbass",
           status: "downloaded",
-          source: "UNSW public staff profile photo",
+          source: "University of New South Wales public staff profile photo",
         },
       },
       {
@@ -281,16 +284,16 @@ export const siteContent = {
       {
         name: "Michael Milford",
         title:
-          "Centre Director, QUT Centre for Robotics; Professor and ARC Laureate Fellow",
-        shortTitle: "QUT Centre for Robotics",
+          "Centre Director, Queensland University of Technology Centre for Robotics; Professor and ARC Laureate Fellow",
+        shortTitle: "Queensland University of Technology",
         website: "https://www.qut.edu.au/about/our-people/academic-profiles/michael.milford",
-        bio: "Prof. Michael Milford conducts interdisciplinary research at the boundary between robotics, neuroscience, and computer vision. He is Centre Director of the QUT Centre for Robotics, Professor, ARC Laureate Fellow, and a Fellow of the Australian Academy of Technology and Engineering.",
+        bio: "Prof. Michael Milford conducts interdisciplinary research at the boundary between robotics, neuroscience, and computer vision. He is Centre Director of the Queensland University of Technology Centre for Robotics, Professor, ARC Laureate Fellow, and a Fellow of the Australian Academy of Technology and Engineering.",
         email: "michael.milford@qut.edu.au",
         image: {
           src: "/images/speakers/michael-milford.jpg",
           alt: "Michael Milford",
           status: "downloaded",
-          source: "QUT Centre for Robotics public profile photo",
+          source: "Queensland University of Technology Centre for Robotics public profile photo",
         },
       },
       {

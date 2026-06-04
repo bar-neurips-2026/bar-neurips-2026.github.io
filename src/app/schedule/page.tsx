@@ -35,6 +35,7 @@ export default function SchedulePage() {
 
         <section className="subpage-section">
           <h2>{siteContent.speakers.heading}</h2>
+          <p className="section-note">{siteContent.speakers.note}</p>
           <div className="speakers-grid">
             {siteContent.speakers.people.map((speaker) => (
               <a

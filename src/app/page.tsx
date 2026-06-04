@@ -34,17 +34,26 @@ export default function Home() {
 
         <section className="section">
           <h2>{siteContent.sections.topics}</h2>
-          <ul className="topics-list">
+          <p>{siteContent.topicIntro}</p>
+          <ol className="home-topics-list">
             {siteContent.topics.map((area) => (
-              <li key={area.title}>
-                <strong>{area.title}</strong> — {area.question}
+              <li className="home-topic" key={area.title}>
+                <h3>{area.title}</h3>
+                <p>{area.question}</p>
+                <p className="home-topic-label">Topics include, e.g.,</p>
+                <ul className="home-topic-items">
+                  {area.topics.map((topic) => (
+                    <li key={topic}>{topic}</li>
+                  ))}
+                </ul>
               </li>
             ))}
-          </ul>
+          </ol>
         </section>
 
         <section className="section">
           <h2>{siteContent.speakers.heading}</h2>
+          <p className="section-note">{siteContent.speakers.note}</p>
           <div className="people">
             {siteContent.speakers.people.map((speaker) => (
               <OrganizerCard key={speaker.name} organizer={speaker} />

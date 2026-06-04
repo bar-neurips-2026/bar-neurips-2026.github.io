@@ -63,7 +63,7 @@ export default function CallForPapersPage() {
               ))}
             </tbody>
           </table>
-          <p className="note">{page.note}</p>
+          {page.note ? <p className="note">{page.note}</p> : null}
         </section>
       </PageFrame>
     </SiteShell>

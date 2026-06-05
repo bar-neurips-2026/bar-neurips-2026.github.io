@@ -33,11 +33,13 @@ export function SiteShell({
             <div className="navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 {siteContent.navigation.map((item) => (
-                  <li
-                    key={item.href}
-                    className={item.key === active ? "nav-item active" : "nav-item"}
-                  >
-                    <SmoothScrollLink className="nav-link" href={item.href}>
+                  <li key={item.href} className="nav-item">
+                    <SmoothScrollLink
+                      activeClassName="nav-link-active"
+                      className="nav-link"
+                      href={item.href}
+                      sectionKey={item.key}
+                    >
                       {item.label}{" "}
                       {item.key === active ? <span className="sr-only">(current)</span> : null}
                     </SmoothScrollLink>

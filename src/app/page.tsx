@@ -47,20 +47,9 @@ export default function Home() {
 
         <section className="section" id="about">
           <h2>{siteContent.sections.about}</h2>
-          <p>{siteContent.about}</p>
-        </section>
-
-        <section className="section" id="topics">
-          <h2>{siteContent.sections.topics}</h2>
-          <p>{siteContent.topicIntro}</p>
-          <ol className="home-topics-list">
-            {siteContent.topics.map((area) => (
-              <li className="home-topic" key={area.title}>
-                <h3>{area.title}</h3>
-                <p>{area.question}</p>
-              </li>
-            ))}
-          </ol>
+          {siteContent.about.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </section>
 
         <section className="section" id="keynote-speakers">
@@ -78,19 +67,6 @@ export default function Home() {
           <p>{callForPapers.intro}</p>
 
           <div className="inline-block-section">
-            <h3>{siteContent.sections.topics}</h3>
-            <div className="cfp-topics-columns">
-              {callForPapers.topicColumns.map((column, index) => (
-                <ul className="cfp-topics-list" key={`cfp-column-${index + 1}`}>
-                  {column.map((topic) => (
-                    <li key={topic}>{topic}</li>
-                  ))}
-                </ul>
-              ))}
-            </div>
-          </div>
-
-          <div className="inline-block-section">
             <h3>Submission Guidelines</h3>
             <table className="info-table">
               <tbody>
@@ -105,6 +81,30 @@ export default function Home() {
               </tbody>
             </table>
           </div>
+
+          <div className="inline-block-section">
+            <h3>Accepted Papers</h3>
+            <p className="placeholder">{schedule.acceptedPapersText}</p>
+          </div>
+        </section>
+
+        <section className="section" id="topics">
+          <h2>{siteContent.sections.topics}</h2>
+          <p>{siteContent.topicIntro}</p>
+          <ol className="home-topics-list">
+            {siteContent.topics.map((area) => (
+              <li className="home-topic" key={area.title}>
+                <h3>{area.title}</h3>
+                <p>{area.question}</p>
+                <p className="home-topic-label">Topics include, e.g.,</p>
+                <ul className="home-topic-items">
+                  {area.topics.map((topic) => (
+                    <li key={topic}>{topic}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className="section" id="important-dates">
@@ -140,11 +140,6 @@ export default function Home() {
               ))}
             </tbody>
           </table>
-
-          <div className="inline-block-section">
-            <h3>Accepted Papers</h3>
-            <p className="placeholder">{schedule.acceptedPapersText}</p>
-          </div>
         </section>
 
         <section className="section" id="organizers">

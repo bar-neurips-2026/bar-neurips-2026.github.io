@@ -29,9 +29,9 @@ export const siteContent = {
   heroBadge: "NeurIPS 2026 Workshop",
   navigation: [
     { key: "about", label: "Introduction", href: "/#about" },
-    { key: "topics", label: "Topics", href: "/#topics" },
     { key: "keynote-speakers", label: "Keynote Speakers", href: "/#keynote-speakers" },
     { key: "call-for-papers", label: "Call for Papers", href: "/#call-for-papers" },
+    { key: "topics", label: "Topics", href: "/#topics" },
     { key: "important-dates", label: "Important Dates", href: "/#important-dates" },
     { key: "schedule", label: "Schedule", href: "/#schedule" },
     { key: "organizers", label: "Organizers", href: "/#organizers" },
@@ -92,8 +92,10 @@ export const siteContent = {
       contactEmails: ["xinshu.li@rmit.edu.au"],
     },
   },
-  about:
-    "The next breakthroughs in intelligence may emerge not from a single discipline, but from the intersection of neuroscience, AI, and robotics. This workshop creates a forum for researchers to exchange ideas, challenge assumptions, and uncover the principles that will shape future intelligence.",
+  about: [
+    "For decades, neuroscience, autonomous agents, and robotics have advanced largely independently, driven by different goals, methodologies, and evaluation criteria. Today, however, these once-parallel paths are beginning to converge. As foundation models, autonomous agents, and embodied AI systems become increasingly capable of reasoning, planning, learning, and acting in complex environments, researchers across these communities are confronting many of the same fundamental questions about intelligence, adaptation, and autonomy.",
+    "BAR (Brain, Agents, and Robots) aims to bring these communities together to identify shared principles, foster cross-disciplinary collaboration, and explore how cognition, agency, and embodiment can be integrated into next-generation intelligent systems.",
+  ],
   importantDates: [
     ["Paper Submission Opens", "July 13, 2026, AoE"],
     ["Paper Submission Deadline", "August 29, 2026, AoE"],

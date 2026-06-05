@@ -7,12 +7,44 @@ type Theme = "system" | "dark" | "light";
 export function SmoothScrollLink({
   href,
   className,
+  activeClassName,
+  sectionKey,
   children,
 }: {
   href: string;
   className?: string;
+  activeClassName?: string;
+  sectionKey?: string;
   children: ReactNode;
 }) {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    if (!sectionKey) {
+      return;
+    }
+
+    const updateActiveSection = () => {
+      const sections = Array.from(
+        document.querySelectorAll<HTMLElement>("section[id]:not(#top)")
+      );
+      const current = sections
+        .filter((section) => section.getBoundingClientRect().top <= 120)
+        .at(-1);
+
+      setActiveSection(current?.id ?? sections[0]?.id ?? "");
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, [sectionKey]);
+
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     const hashIndex = href.indexOf("#");
 
@@ -37,8 +69,10 @@ export function SmoothScrollLink({
     event.preventDefault();
 
     if (!targetId || targetId === "top") {
+      setActiveSection("top");
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
+      setActiveSection(targetId);
       document.getElementById(targetId)?.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -48,8 +82,13 @@ export function SmoothScrollLink({
     window.history.replaceState(null, "", `${pathname}${window.location.search}`);
   }
 
+  const classes =
+    sectionKey && activeClassName && activeSection === sectionKey
+      ? [className, activeClassName].filter(Boolean).join(" ")
+      : className;
+
   return (
-    <a className={className} href={href} onClick={handleClick}>
+    <a className={classes} href={href} onClick={handleClick}>
       {children}
     </a>
   );
